@@ -1,0 +1,22 @@
+@import "font-family";
+
+body {
+  font-family: 'DMSans', sans-serif;
+  background-color: #F5F5F5;
+
+  @media (max-width: 375px) {
+    .desktop {
+      display: none;
+    }
+
+    @import 'mobile.scss';
+  }
+
+  @media (min-width: 376px) {
+    .mobile {
+      display: none;
+    }
+
+    @import 'desktop.scss';
+  }
+}

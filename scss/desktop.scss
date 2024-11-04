@@ -1,0 +1,250 @@
+@use "variables" as var;
+@use "mixins" as mixin;
+
+.desktop {
+  display: grid;
+  grid-template-areas:
+      "side_grid main_grid main_grid";
+  column-gap: var.$gap;
+  justify-content: center;
+  align-content: center;
+  margin: 4rem auto 4rem auto;
+
+  .grid {
+    grid-area: main_grid;
+    display: grid;
+    grid-template-columns: repeat(3, 250px);
+    grid-template-rows: 320px 250px 250px;
+    column-gap: var.$gap;
+    row-gap: var.$gap;
+    justify-items: center;
+
+    #cell_1 {
+      grid-column: 1/3;
+      grid-row: 1/2;
+
+      @include mixin.desktopFrame(535px, 320px, var.$purple-500);
+      display: flex;
+      text-align: center;
+      justify-content: center;
+      align-items: center;
+
+      h1 {
+        font-size: var.$main-title;
+        font-weight: 400;
+        margin: 0;
+        line-height: 1.2;
+        color: var.$white;
+
+        .highlight {
+          color: var.$yellow-500;
+        }
+
+        em {
+          font-style: italic;
+        }
+      }
+
+      img {
+        height: 24px;
+        margin-top: 1rem;
+      }
+
+      p {
+        margin: 0;
+        color: var.$yellow-100;
+        font-size: var.$describe;
+        font-weight: 300;
+      }
+    }
+
+    #cell_2 {
+      grid-column: 1 / 2;
+      grid-row: 2 / 3;
+
+      @include mixin.desktopFrame(250px, 250px, var.$white);
+      overflow: hidden;
+
+      img {
+        z-index: -1;
+        height: 67.5px;
+        margin: 1rem 0 0 1rem;
+      }
+
+      div {
+        margin: 1rem auto auto 1rem;
+
+        h2 {
+          margin: 0;
+          font-size: var.$sub-title;
+          font-weight: 400;
+          line-height: 2rem;
+        }
+      }
+    }
+
+    #cell_3 {
+      grid-column: 2 / 3;
+      grid-row: 2 / 3;
+
+      @include mixin.desktopFrame(250px, 250px, var.$yellow-500);
+      overflow: hidden;
+
+      img {
+        width: 210px;
+        margin: 1rem 0 0 1.25rem;
+      }
+
+      div {
+        margin: 1.75rem 0 0 1.25rem;
+
+        h2 {
+          margin: 0;
+          font-size: var.$sub-title;
+          font-weight: 400;
+          line-height: 1.75rem;
+        }
+      }
+    }
+
+    #cell_4 {
+      grid-column: 3 / 4;
+      grid-row: 1 / 3;
+
+      @include mixin.desktopFrame(250px, 605px, var.$purple-100);
+      overflow: hidden;
+
+      div {
+        margin: 3rem 0 1.25rem 1.25rem;
+
+        h2 {
+          margin: 0;
+          line-height: 1.45rem;
+          font-weight: 500;
+        }
+      }
+
+      img {
+        height: 330px;
+        margin: 1.75rem 0 0.5rem 1.25rem;
+      }
+
+      div {
+        margin: .75rem auto auto 1.25rem;
+
+        p {
+          font-size: var.$describe;
+          margin: 0;
+          line-height: 1rem;
+        }
+      }
+    }
+
+    #cell_5 {
+      grid-column: 2 / 4;
+      grid-row: 3 / 4;
+
+      @include mixin.desktopFrame(535px, 250px, var.$purple-500);
+      display: flex;
+      align-items: center;
+
+      img {
+        height: 200px;
+        margin-left: 1.5rem;
+      }
+
+      h1 {
+        font-size: var.$sub-title;
+        font-weight: 400;
+        line-height: 1rem;
+        color: var.$white;
+      }
+    }
+
+    #cell_6 {
+      grid-column: 1 / 2;
+      grid-row: 3 / 4;
+
+      @include mixin.desktopFrame(250px, 250px, var.$white);
+
+      h1 {
+        font-size: var.$main-title;
+        font-weight: 500;
+        padding-top: 1rem;
+        padding-left: 2rem;
+        margin: 0;
+      }
+
+      p {
+        font-size: var.$regular;
+        padding-left: 2rem;
+        margin-top: 0;
+      }
+
+      img {
+        height: 4.5rem;
+        margin-top: 1rem;
+        padding-left: 2rem;
+      }
+    }
+  }
+
+  .side_grid {
+    grid-area: side_grid;
+
+    display: grid;
+    grid-template-columns: 250px;
+    grid-template-rows: 427.5px 427.5px;
+    row-gap: var.$gap;
+
+    #cell_7 {
+      @include mixin.desktopFrame(250px, 427.5px, var.$yellow-100);
+
+      div {
+        padding-top: 3rem;
+
+        h2 {
+          font-size: var.$sub-title;
+          font-weight: 500;
+          padding-left: 2rem;
+          margin: 0;
+          line-height: 2.25rem;
+        }
+      }
+
+      em {
+        font-size: var.$sub-title;
+        padding-left: 2rem;
+        line-height: 2.25rem;
+        color: var.$purple-500
+      }
+
+      img {
+        width: 200px;
+        margin-top: 2rem;
+        padding-left: 1.75rem;
+      }
+    }
+
+    #cell_8 {
+      @include mixin.desktopFrame(250px, 427.5px, var.$yellow-500);
+
+      div {
+        width: 100%;
+        padding: 1.5rem 0 0 1.5rem;
+
+        h2 {
+          font-size: var.$sub-title;
+          font-weight: 500;
+          margin: 0;
+          line-height: 2.25rem;
+        }
+      }
+
+      img {
+        width: 210px;
+        padding: 3rem 0 0 1.5rem;
+      }
+    }
+  }
+}

@@ -1,0 +1,12 @@
+@mixin desktopFrame($width, $height, $background-color) {
+  width: $width;
+  height: $height;
+  background-color: $background-color;
+  border-radius: 15px;
+}
+
+@mixin mobileFrame($background-color) {
+  width: 90%;
+  background-color: $background-color;
+  border-radius: 15px;
+}

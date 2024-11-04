@@ -1,0 +1,13 @@
+@font-face {
+  font-family: 'DMSans';
+  src: url('../assets/fonts/DMSans-VariableFont_opsz,wght.ttf') format('truetype');
+  font-weight: 100 700; /* 定義範圍，適用於可變字重 */
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'DMSansItalic';
+  src: url('../assets/fonts/DMSans-Italic-VariableFont_opsz,wght.ttf') format('truetype');
+  font-weight: 100 700;
+  font-style: italic;
+}
